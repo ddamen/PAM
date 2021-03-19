@@ -18,24 +18,32 @@ export default function Home({navigation}) {
         require('../assets/img7.png'),
         require('../assets/img8.png'),
         require('../assets/img9.png'),
+        require('../assets/img10.png'),
+        require('../assets/img11.png'),
+        require('../assets/img12.png'),
+        require('../assets/img13.png'),
+        require('../assets/img14.png'),
+        require('../assets/img15.png'),
+        require('../assets/img16.png'),
       ]);
 
   return (
     <View style={globalStyles.container}>
+      <Text style={styles.welcomeTitle}>Select the photo that best captures how you feel right now:</Text>    
         <FlatList
   
-    numColumns={3}
+    numColumns={4}
 
     data={images}
     renderItem={ ({ item, index }) => ( 
-        <TouchableOpacity>
+        <TouchableOpacity onPress ={pressHandler}>
       <Image source={item} // Use item to set the image source
         key={index} // Important to set a key for list items
         style={{
           width:75,
           height:75,
           borderWidth:2,
-          borderColor:'#d35647',
+          borderColor: '#fff',
           resizeMode:'contain',
           margin:8
         }}
@@ -48,3 +56,13 @@ export default function Home({navigation}) {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  welcomeTitle: { 
+    alignSelf: 'center',
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },  
+ 
+  
+});
